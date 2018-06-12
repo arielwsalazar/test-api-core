@@ -1,0 +1,29 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WeatherSimulator", "WeatherSimulator\WeatherSimulator.csproj", "{FFD74D1E-B52C-438F-8B87-2665A8F59012}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WeatherSimulator.Core", "WeatherSimulator.Core\WeatherSimulator.Core.csproj", "{5ABDDEE5-1F90-4338-8A1A-4020FBB0D44D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WeatherSimulatorAPI", "WeatherSimulatorAPI\WeatherSimulatorAPI.csproj", "{162C9E91-65D0-48CB-991E-E4638F28558A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FFD74D1E-B52C-438F-8B87-2665A8F59012}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FFD74D1E-B52C-438F-8B87-2665A8F59012}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FFD74D1E-B52C-438F-8B87-2665A8F59012}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FFD74D1E-B52C-438F-8B87-2665A8F59012}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5ABDDEE5-1F90-4338-8A1A-4020FBB0D44D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5ABDDEE5-1F90-4338-8A1A-4020FBB0D44D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5ABDDEE5-1F90-4338-8A1A-4020FBB0D44D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5ABDDEE5-1F90-4338-8A1A-4020FBB0D44D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{162C9E91-65D0-48CB-991E-E4638F28558A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{162C9E91-65D0-48CB-991E-E4638F28558A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{162C9E91-65D0-48CB-991E-E4638F28558A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{162C9E91-65D0-48CB-991E-E4638F28558A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
