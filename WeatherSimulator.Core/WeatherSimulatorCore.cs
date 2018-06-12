@@ -81,46 +81,41 @@ namespace WeatherSimulator.Core
 			double distanceBC = Math.Round( Math.Sqrt(Math.Pow(xs3,2)+Math.Pow(ys3,2)), 2);
 			double error = ERROR_DECIMAL;
 
-			if (distanceAB<distanceAC)
-			{
-				error = distanceAB * ERROR_DECIMAL;
-			}else
-			{
-				error = distanceAC * ERROR_DECIMAL;
-			}
-
+			error = GetMinimalError(distanceAB,distanceAC);
 			if (Math.Abs(distanceAB - distanceAC) <= error)
 			{
 				return true;
 			}
 
-			if (distanceAB<distanceBC)
-			{
-				error = distanceAB * ERROR_DECIMAL;
-			}else
-			{
-				error = distanceBC * ERROR_DECIMAL;
-			}
+			error = GetMinimalError(distanceAB,distanceBC);
 			if (Math.Abs(distanceAB - distanceBC) <= error)
             {
                 return true;
             }
 
-
-			if(distanceAC<distanceBC)
-			{
-				error = distanceAC * ERROR_DECIMAL;
-			}else
-			{
-				error = distanceBC * ERROR_DECIMAL;
-			}
-
+			error = GetMinimalError(distanceAC,distanceBC);
 			if (Math.Abs(distanceAC - distanceBC) <= error)
             {
                 return true;
             }
 
 			return false;
+		}
+
+		private double GetMinimalError(double numberA, double numberB)
+		{
+			double value;
+
+			if (numberA < numberB)
+            {
+				value = numberA * ERROR_DECIMAL;
+            }
+            else
+            {
+				value = numberB * ERROR_DECIMAL;
+            }
+
+			return value;
 		}
 
 		private bool IsRain()
@@ -192,6 +187,7 @@ namespace WeatherSimulator.Core
             double functionResult = Math.Round((m * ferengi.GalaxyPosition.X) + b);
 			double difference = Math.Round(Math.Abs(yResult * ERROR_DECIMAL));
 
+            //check if sun is aligned 
             if (Math.Abs(yResult - functionResult) <= difference)
             {
 				double differenceB = Math.Abs(b * ERROR_DECIMAL);
@@ -212,6 +208,11 @@ namespace WeatherSimulator.Core
             return false;
 		}
 
+        /// <summary>
+        /// it checks if x value is 0 in each point.
+        /// </summary>
+        /// <returns><c>true</c> sun is aligned <c>false</c> otherwise.</returns>
+        /// <param name="processType">if calculation includes the sun or not.</param>
 		private bool pointValidation(Enumerators.ProcessType processType)
 		{
 			double denominatorSegmentTwo = betasoide.GalaxyPosition.X - ferengi.GalaxyPosition.X;
@@ -223,21 +224,10 @@ namespace WeatherSimulator.Core
                     {
                         return true;
                     }
-                    else
-                    {
-                        return false;
-                    }               
-                }
-                else
-                {
-                    return false;
                 }
             }
-            else
-            {
-                return false;
 
-            }
+			return false;
 		}
 	}
 }
