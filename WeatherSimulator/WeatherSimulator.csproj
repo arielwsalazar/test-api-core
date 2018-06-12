@@ -8,4 +8,7 @@
   <ItemGroup>
     <ProjectReference Include="..\WeatherSimulator.Core\WeatherSimulator.Core.csproj" />
   </ItemGroup>
+  <ItemGroup>
+    <None Remove="db.csv" />
+  </ItemGroup>
 </Project>
